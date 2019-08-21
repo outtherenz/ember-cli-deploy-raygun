@@ -90,7 +90,7 @@ module.exports = {
                     method: 'POST',
                     url: `https://app.raygun.io/upload/jssymbols/${this.readConfig('appId')}?authToken=${this.readConfig('token')}`,
                     formData: {
-                      url: this.readConfig('prefix') + file,
+                      url: this.readConfig('prefix') + matchingDistFile,
                       file: fs.createReadStream(path.join(context.project.root, context.distDir, file))
                     }
                   });
